@@ -67,17 +67,6 @@ foreign key(cai) references donatori(cai) on update cascade on delete cascade)en
 create table donazione_generica(
 tipo varchar(9) primary key)engine='innodb';
 
-create table analisi(
-codana integer primary key,
-codmed integer,
-coddona integer,
-malinf varchar(3),
-valemo numeric(3,1),
-index newmed(codmed),
-index newdona(coddona),
-foreign key(coddona) references donazione_reale(coddona) on update cascade on delete set null,
-foreign key(codmed) references medici(codmed) on update cascade on delete cascade)engine='innodb';
-
 create table donazione_reale(
 cai integer,
 tipo varchar(9),
@@ -97,6 +86,17 @@ foreign key(codsede) references sede(codsede) on update cascade,
 unique (cai,data),
 unique(coddona, tipo),
 primary key(cai, tipo, data))engine='innodb';
+
+create table analisi(
+codana integer primary key,
+codmed integer,
+coddona integer,
+malinf varchar(3),
+valemo numeric(3,1),
+index newmed(codmed),
+index newdona(coddona),
+foreign key(coddona) references donazione_reale(coddona) on update cascade on delete set null,
+foreign key(codmed) references medici(codmed) on update cascade on delete cascade)engine='innodb';
 
 
 create table sedi_inf(
