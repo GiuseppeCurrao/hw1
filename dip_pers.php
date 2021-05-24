@@ -63,7 +63,7 @@
                         </div>
                         <a href= "hw1.php">Cads</a>
                     </div>
-                    <a class="buttom" href = "mhw2.html">
+                    <a class="buttom" href = "locali.php">
                         Trova sedi vicine 
                     </a>
                     <div id="links">
