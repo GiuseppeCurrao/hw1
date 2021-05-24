@@ -1,0 +1,177 @@
+a.buttom,
+#links{
+    cursor:pointer;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    color:black;
+}
+
+a.buttom, a.buttom:visited {
+    color: rgb(250, 241, 229);
+    padding: 5px;
+    font-weight: bolder;
+    background-color: tomato;
+    border: 1px solid dimgray;
+    border-radius: 5px;    
+}
+
+a.buttom:hover{
+    background-color:floralwhite;
+    color:black;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    margin:0;
+    background-color:whitesmoke;
+}
+
+a.buttom,
+#links,
+header h1{
+    font-family: 'Open sans', serif;
+    font-style: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header .buttom{
+    font-size: 1.1em;
+}
+
+header{
+    color:black;
+    background-image: url("Immagini/background.jpg");
+    background-size:cover;
+    background-position: center;
+    height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+header h1{
+    margin-top:60px;
+    margin-bottom: 0px;
+    font-size: 2.5em;
+    line-height: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    text-align: center;
+}
+
+header nav{
+    font-size: .95em;
+    padding:20px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#links a{
+    border: 2px solid dimgray;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+#links a:hover{
+    background-color: floralwhite;
+}
+
+#logo{
+    display:flex;
+    font-size: 3em;
+    text-transform: capitalize;
+    font-weight:bold;
+}
+
+#logo img{
+    width: 75px;
+    height: 75px;
+
+}
+
+#menù{
+    display:none;
+}
+
+#menù div{
+    width: 25px;
+    height: 3px;
+    background-color: bisque;
+    margin: 5px 0;
+}
+
+footer{
+    color: black;
+    background-color: indianred;
+    height:12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1em;
+    padding: 7px;
+}
+
+footer h1{
+    margin: 0px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.hidden{
+    display: none;
+}
+
+
+@media (max-width: 500px) {
+    #links {
+      display: none;
+    }
+  
+    #menù {
+      display: block;
+    }
+
+    body{
+        font-size: 14px;
+    }
+
+    #logo img{
+        width: 50px;
+        height: 50px;
+    }
+
+    #logo a{
+        display: none;
+    }
+}

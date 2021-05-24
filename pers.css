@@ -1,0 +1,146 @@
+.link a:link{
+    text-decoration: none;
+    color:black;
+}
+
+
+#main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin:10px;
+}
+
+#lato{
+    background-color: rgb(255, 181, 167);
+    border-radius: 10px;
+    width: 20%;
+    cursor: pointer;
+}
+
+#lato img{
+    max-width: 7%;
+}
+
+.link{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:5px;
+    font-size: 1.1em;
+}
+
+#centro{
+    width: 79%;
+}
+
+#donazione a{
+    padding:10px;
+}
+
+#donazione{
+    background-color: rgb(252, 213, 206);
+    border-radius: 10px;
+    padding:10px;
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+.don{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: rgb(252, 213, 206);
+    font-size: 1em;
+    border-radius: 10px;
+    padding:5px;
+}
+
+#cal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(248, 237, 235);
+    font-size: 1.1em;
+    margin:4px;
+    border-radius: 5px;;
+}
+
+.hide{
+    opacity:0;
+}
+.errorj{
+    border:2px solid red;
+}
+
+.prenotazione{
+    background-color: rgb(250, 225, 221);
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#mpren{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    background-color: rgb(248, 237, 235);
+    border-radius: 10px;
+    margin:10px;
+    padding:5px;
+}
+#mypren{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding:5px;
+}
+
+h4{
+    margin:10px;
+}
+
+#codice, #pcittà, #pdata{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fpren{
+    background-color: rgb(232, 232, 228);
+    display: flex;
+    flex-direction: column;
+    margin:10px;
+    padding:5px;
+    border-radius: 10px;
+}
+
+.sede{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(216, 226, 220);
+    border-radius: 10px;
+    padding:5px;
+    margin:5px;
+
+}
+.hidden{
+    display:none;    
+}
+
+#form{
+    background-color: rgb(250, 225, 221);
+    border-radius: 10px;
+    padding:5px;
+    margin:10px;
+    font-size: 1em;
+}

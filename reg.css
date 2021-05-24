@@ -1,0 +1,45 @@
+#f{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+#center{
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    background-color: rgb(255, 181, 167);
+    justify-content: space-around;
+    align-items: center;
+    padding:10px;
+    width: 70%;
+}
+
+
+.errorj{
+    border:2px solid red;
+}
+
+.errors{
+    color:black;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+form div{
+    padding:5px;
+    background-color: rgb(252, 213, 206);
+    border-radius: 5px;
+}
+.hide{
+    opacity:0;
+}
+
+#center img{
+    border-radius: 45px;
+}

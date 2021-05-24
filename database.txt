@@ -1,0 +1,179 @@
+create table donatori(
+cai integer primary key,
+nome varchar(20),
+cognome varchar(20),
+cf varchar(20),
+mail varchar(20),
+psw varchar(20),
+telefono integer,
+sesso varchar(1),
+dataNascita date,
+citta varchar(20),
+via varchar(20),
+peso integer,
+rh varchar(3),
+gruppo varchar(2),
+disp varchar(2),
+iperimmune varchar(2))engine='Innodb';
+
+create table dipendenti(
+cf varchar(20) primary key,
+nome varchar(20),
+telefono integer,
+sesso varchar(1),
+dataNascita date,
+citta varchar(20),
+via varchar(20),
+tipo varchar(20),
+psw varchar(20)	)engine='Innodb';
+
+create table medici(
+codmed integer primary key,
+cf varchar(20),
+stip_base float,
+an_eff integer,
+stip_tot float,
+index newdip(cf),
+foreign key(cf) references dipendenti(cf) on update cascade on delete cascade)engine='innodb';
+
+create table sede(
+codsede integer primary key,
+codresp integer,
+citta varchar(20),
+via varchar(20),
+nome varchar(20),
+index newresp(codresp),
+foreign key(codresp) references medici(codmed)on update cascade on delete set null)engine='Innodb'; 
+
+create table infermieri(
+codinf integer primary key,
+cf varchar(20),
+stip float,
+sedep integer,
+index newsede(sedep),
+index newdip(cf),
+foreign key(cf) references dipendenti(cf)on update cascade on delete cascade,
+foreign key(sedep) references sede(codsede) on update cascade on delete set null)engine='innodb';
+
+create table prenotazione(
+codpren integer primary key,
+cai integer, data date,
+codsede integer,
+index newsede(codsede),
+index newdon(cai),
+foreign key(codsede) references sede(codsede) on update cascade on delete cascade,
+foreign key(cai) references donatori(cai) on update cascade on delete cascade)engine='Innodb';
+
+create table donazione_generica(
+tipo varchar(9) primary key)engine='innodb';
+
+create table analisi(
+codana integer primary key,
+codmed integer,
+coddona integer,
+malinf varchar(3),
+valemo numeric(3,1),
+index newmed(codmed),
+index newdona(coddona),
+foreign key(coddona) references donazione_reale(coddona) on update cascade on delete set null,
+foreign key(codmed) references medici(codmed) on update cascade on delete cascade)engine='innodb';
+
+create table donazione_reale(
+cai integer,
+tipo varchar(9),
+data date,
+codsede integer,
+coddona integer,
+quantita integer,
+gruppo varchar(4),
+rh varchar(3),
+iperimmune varchar(2),
+index newdon(cai),
+index newtipo(tipo),
+index newsede(codsede),
+foreign key(cai) references donatori(cai) on update cascade,
+foreign key(tipo) references donazione_generica(tipo),
+foreign key(codsede) references sede(codsede) on update cascade,
+unique (cai,data),
+unique(coddona, tipo),
+primary key(cai, tipo, data))engine='innodb';
+
+
+create table sedi_inf(
+codinf integer,
+codsede integer,
+datain date,
+giorni_lav varchar(30),
+index newinf(codinf),
+index newsede(codsede),
+foreign key(codinf) references infermieri(codinf) on update cascade on delete cascade,
+foreign key(codsede) references sede(codsede) on update cascade on delete cascade,
+primary key(codinf, codsede))engine='Innodb';
+
+create table storico_sedi_inf(
+codinf integer,
+codsede integer,
+datain date,
+datafin date,
+index newinf(codinf),
+index newsede(codsede),
+foreign key(codinf) references infermieri(codinf) on update cascade on delete cascade,
+foreign key(codsede) references sede(codsede) on update cascade on delete cascade,
+primary key(codinf, codsede, datain))engine='Innodb';
+
+create table sede_att_med(
+codmed integer,
+codsede integer, 
+datain date,
+index newmed(codmed),
+index newsede(codsede),
+foreign key(codmed) references medici(codmed) on update cascade on delete cascade,
+foreign key(codsede) references sede(codsede) on update cascade on delete cascade,
+primary key(codmed)) engine='innodb';
+
+create table storico_sedi_med(
+codmed integer,
+codsede integer,
+datain date,
+datafin date,
+index newmed(codmed),
+index newsede(codsede),
+foreign key(codmed) references medici(codmed) on update cascade on delete cascade,
+foreign key(codsede) references sede(codsede) on update cascade on delete cascade,
+primary key(codmed, codsede, datain))engine='Innodb';
+
+
+delimiter //
+create trigger peso before update on donatori
+for each row
+begin
+if new.peso<50
+then
+set new.disp="no";
+end if;
+end//
+delimiter ;
+
+delimiter //
+create trigger set_disponibilita after update on analisi
+for each row
+begin
+if new.malinf like 'pos'
+then
+update donatori
+set disp='no' 
+where cai=(select d.cai from donazioni_reali d where c.codana=new.codana);
+end if;
+end//
+delimiter ;
+
+delimiter //
+create trigger assicurazione_prenotazione before insert on prenotazione
+for each row
+begin
+if new.cai=(select d.cai from donatori d where d.disp like 'no')
+then
+signal sqlstate '04000' set message_text='Attenzione: Data la tua cartella clinica non puoi ancora prenotare una donazione.';
+end if;
+end//
+delimiter ;
