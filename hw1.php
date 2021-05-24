@@ -15,7 +15,7 @@
                     <div id= "img">
                          <a href="hw1.php"><img src="Immagini/logo.png" ></a>
                     </div>
-                    <a href="home.php">Cads</a>
+                    <a href="hw1.php">Cads</a>
                 </div>
                 <a class="buttom" href = "locali.php">
                     Trova sedi vicine 
