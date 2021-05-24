@@ -21,7 +21,7 @@
                     Trova sedi vicine 
                 </a>
                 <div id="links">
-                    <a href="home.php">>Home</a>
+                    <a href="home.php">Home</a>
                     <a href = "login.php">Accedi</a>
                 </div>
                 <div id="menù">
