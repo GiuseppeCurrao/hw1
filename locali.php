@@ -13,13 +13,13 @@
         <header>
             <nav>
                 <div id= "logo">
-                    <a href="home.php"><img src= "Immagini/logo.png">
+                    <a href="hw1.php"><img src= "Immagini/logo.png">
                     <a>Cads</a>
                 </div>
                 <div id= "links">
-                    <a href="home.php">>Home</a>
+                    <a href="hw1.php">Home</a>
                     <a>Contatti</a>
-                    <a>Accedi</a>
+                    <a href="login.php">Accedi</a>
                 </div>
                 <div id="menù">
                     <div></div>
