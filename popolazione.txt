@@ -1,0 +1,37 @@
+insert into donatori values('1957', 'Giuseppe', 'Currao', 'CRRGPP99R02C351H','peppecurrao@gmail.com', 'salame55', '3892879222', 'M', '1999-10-02', 'Mascalucia', 'via etnea', '80', 'pos', 'B', 'si', 'no');
+insert into donatori values('1286', 'Giacomo', 'Verdi', 'VRDGCM90S04I754I', 'giacomogiacomo@gmail.com', 'polpetta3', '3386723987', 'M', '1990-11-04', 'Siracusa', 'via archia', '70', 'pos', 'A', 'si', 'si');
+
+insert into dipendenti values('MNGNNZ76P24G273K', 'Nunzio Mangiameli', '3408978674', 'M', '1976-09-24', 'Palermo', 'via della regione', 'medico', 'verdure5');
+insert into dipendenti values('BLLRNI80H60C351N', 'Irene Bellofiore', '3408456775', 'F', '1980-06-20', 'Catania', 'via della regione', 'medico', "rotolapalla");
+
+insert into dipendenti values('CRRCRL86B47I754G', 'Carla Curro', '3924251342', 'F', '1986-02-07', 'Siracusa', 'via antani', 'infermiere', 'vibranio13');
+insert into dipendenti values('BLNGNS92S49C351T', 'Agnese Blanco', '3498297548', 'F', '1992-11-09', 'Catania', 'via bellini', 'infermiere','dadopesato');
+
+insert into medici values('0023', 'MNGNNZ76P24G273K', '1500', '12', '1500');
+insert into medici values('1208', 'BLLRNI80H60C351N', '1500', '20', '1500');
+
+insert into sede values('001', '1208', 'Catania', 'via santa sofia', 'Policlinico'); 
+insert into sede values('002', '0023', 'Palermo', 'via santa rosalia', 'Cervello');
+
+insert into infermieri values('0405', 'CRRCRL86B47I754G', '1400', '001');
+insert into infermieri values('0425', 'BLNGNS92S49C351T', '1400','002');
+
+insert into prenotazione values('19876', '1957', '2020-12-24', '001');
+insert into prenotazione values('20375', '1286', '2021-01-10', '002');
+
+insert into donazione_generica values('sangue');
+insert into donazione_generica values('plasma');
+insert into donazione_generica values('piastrine');
+
+insert into donazione_reale values('1957', 'sangue', '2020-08-04', '001', '3457', '475', 'B', 'pos', null);
+insert into donazione_reale values('1286', 'plasma', '2020-08-20', '002', '3689', '475', null, null, 'si');
+insert into donazione_reale values('1957', 'sangue', '2020-02-01', '001', '3200', '470', 'B', 'pos', null);
+
+
+insert into sedi_inf values('0405', '001', '2010-08-09', 'lun-mar-gio');
+insert into sedi_inf values('0405', '002', '2013-09-09', 'mer-ven');
+insert into sedi_inf values('0425', '001', '2012-10-29', 'lun-mer-ven-sab-dom');
+
+insert into sede_att_med values('0023', '002', '2010-02-30');
+insert into sede_att_med values('1208', '001', '2019-10-20');
+
