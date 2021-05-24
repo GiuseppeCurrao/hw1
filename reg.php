@@ -74,15 +74,15 @@
                 <nav>
                     <div id="logo">
                         <div id= "img">
-                            <a href="home.php"><img src="Immagini/logo.png" ></a>
+                            <a href="hw1.php"><img src="Immagini/logo.png" ></a>
                         </div>
-                        <a href= "home.php">Cads</a>
+                        <a href= "hw1.php">Cads</a>
                     </div>
-                    <a class="buttom" href = "mhw2.html">
+                    <a class="buttom" href = "locali.php">
                         Trova sedi vicine 
                     </a>
                     <div id="links">
-                        <a href="home.php">Home</a>
+                        <a href="hw1.php">Home</a>
                         <a href = "login.php">Accedi</a>
                     </div>
                     <div id="menù">
