@@ -18,7 +18,6 @@
                 </div>
                 <div id= "links">
                     <a href="hw1.php">Home</a>
-                    <a>Contatti</a>
                     <a href="login.php">Accedi</a>
                 </div>
                 <div id="menù">
