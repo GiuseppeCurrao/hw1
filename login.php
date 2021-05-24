@@ -72,9 +72,9 @@
                 <nav>
                     <div id="logo">
                         <div id= "img">
-                            <a href="home.php"><img src="Immagini/logo.png" ></a>
+                            <a href="hw1.php"><img src="Immagini/logo.png" ></a>
                         </div>
-                        <a href= "home.php">Cads</a>
+                        <a href= "hw1.php">Cads</a>
                     </div>
                     <a class="buttom" href = "mhw2.html">
                         Trova sedi vicine 
